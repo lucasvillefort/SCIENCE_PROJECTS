@@ -1,0 +1,59 @@
+1) some matter comands:
+    - pd.set_option("display.max_columns", 500)
+    - dataset.tail()
+    - dataset.head()
+    - dataset.info()
+    - dataset.sample(frac=0.1) # you can put only the number
+    - dataset.columns
+    - dataset.values
+    - dataset.shape
+    - dataset.describe()
+    - dataset.drop()
+    - dataset.isnull().sum()
+    - dataset.isna().sum()
+    - dataset.fillna(valuehere)
+    - database.loc[dataset.duplicated()]
+    - database.loc[~dataset.duplicated(subset=["onecloumns", "anothercolumns"])].reset_index(drop=True).copy()
+    - dataset.query("columnsName == valuesInsideThisColumnsName")
+    - dataset.groupby(["columns"])
+    - dataset.sort_values(["columnsName"], ascendent=False)
+    - dataset.dtypes
+    - dataset.rename(columns={
+        "old_name":"new_name",
+        "old_name2":"new_name2",
+      }, implace=True)
+    - dataset["somecolumns"].value_counts()
+    - dataset.dropna().corr()
+    - dataset.query("columnName != 'other'").groupby("somecolumns")["othercolmns"].agg(["mean","count"]).query("count >=10").sort_values("mean")
+    - pd.DataFrame()
+    - pd.read_csv("nameFile", sep:",")
+    - dataset[[c for c in dataset.columns if 'time' in c]]
+    - dataset.select_dtypes("int")
+    - dataset.iloc[:, [2,3]] # it wear numbers
+    - dataset.loc[:,["columnsone", "columnstwo"]] # it wear names and boolean expressions
+    - dataset.loc[dataset["nameColumns" == "someValue"] & dataset["nameColumns2" != "someValue2"]]
+    - dataset[["someColumns"]].count() or max() or min() or var() or std() or mean() or sum() or quantile(0.75) 
+    - dataset[["columnsName"]].unique() or nunique() or value_counts(normalized=True)
+    - dataset[["columnsName"]].rank(method='first...')
+    - dataset[["columnsName"]].shift(3, fill_value="anyValuesHere")
+    - dataset["columnsName"].clip(minvalue, max_value)
+    - dataset.columns = ['_'.join(c) for c in dataset.columns]
+    - pd.concat([datasetOne, datasetTwo], axis=0 or 1) to high rows is 0 
+    - dataset.merge(datasetTwo) # combine by same columns
+    - np.merge(dataset, datasetTwo, on=["columnsName"])
+    - dataset["chosenColumn"].replace({"female":0, "male":1}, inplace=True)
+    - df3['faixa_idade'] = pd.cut(df3['age'], [0, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+                              labels=['0-20', '20-30', '30-40', '40-50','50-60','60-70','70-80', '80-90','90-100'])
+
+
+2) method to wear:
+    - with plot:
+        - dataset["somecolumns"].value_counts().head(10).plot(kind="bar", title="any title here")
+        - dataset["somecolumns"].plot(kind="hist", bins=20, title="anyone")
+        - dataset.plot(kind="scatter", x="columnsName", y="targetColumns")
+          plot.show()
+    - with sms:
+        - sns.scatterplot(x="columnsName", y="targetColumns", data=dataset, hue="othercolumnsname" )
+        - sns.pairplot(data=dataset, vars=["columnsone", "columnstwo"....], hue="anyColumns")
+          plot.show()
+        - sns.heatmap(dataset.corr(), annot=True)
