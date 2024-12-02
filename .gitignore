@@ -20,3 +20,6 @@ transaction_map.html
 .venv
 test.csv
 train.csv
+business.csv
+Clean_Dataset.csv
+economy.csv
