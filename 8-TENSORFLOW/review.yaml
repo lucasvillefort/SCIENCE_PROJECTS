@@ -1,0 +1,12 @@
+1) TensorFlow:
+  - it is a deep learning framework developed by Google Brain Team.
+  - it is used to build deep learning and neural network models to gain insights from unstructured data, such as
+    images, audio, and natural language.
+  - it can use GPU and TPU for faster computation.
+  - get data -> tensorflow hub(pick a model - transfer learning) -> fit the model -> evaluate the model -> improve  and savead reload the model.
+  - pathway:
+      - image classification
+      - object detection
+      - natural language processing
+      - speech recognition
+      - sequence-to-sequence models
