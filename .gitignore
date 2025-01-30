@@ -17,7 +17,7 @@ heart.csv
 Mall_Customers.csv
 tmp
 transaction_map.html
-.venv
+env
 test.csv
 train.csv
 business.csv
